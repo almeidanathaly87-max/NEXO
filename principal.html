@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nexo | Tarefas</title>
+
+    <link rel="stylesheet" href="principal.css">
+</head>
+
+<body>
+
+    <main class="tela-principal">
+
+        <!-- ==============================
+             NAVEGAÇÃO SUPERIOR
+        =============================== -->
+
+        <nav class="navegacao">
+
+            <button
+                id="botao-tarefas"
+                class="botao-aba ativo"
+                type="button"
+            >
+                Tarefas
+            </button>
+
+
+            <button
+                id="botao-atualizar"
+                class="botao-atualizar"
+                type="button"
+                aria-label="Atualizar tarefas"
+            >
+                ↻
+            </button>
+
+
+            <button
+                id="botao-feed"
+                class="botao-aba"
+                type="button"
+            >
+                Feed
+            </button>
+
+        </nav>
+
+
+         <!-- ==============================
+             CONTEÚDO - TAREFAS
+        =============================== -->
+
+        <section
+            id="area-tarefas"
+            class="conteudo ativo"
+        >
+
+            <div class="lista-tarefas">
+
+
+                <!-- TAREFA 1 -->
+
+                <article class="tarefa">
+
+                    <p class="nome-tarefa">
+                        Arrumar a cama
+                    </p>
+
+                    <button
+                        class="botao-realizar"
+                        type="button"
+                    >
+                        Realizar
+                    </button>
+
+                </article>
+
+
+                 TAREFA 2 
+
+                <article class="tarefa tarefa-concluida">
+
+                    <p class="nome-tarefa">
+                        Lavar a louça do café
+                    </p>
+
+                    <button
+                        class="botao-concluida"
+                        type="button"
+                        disabled
+                    >
+                        Concluída
+                    </button>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             CONTEÚDO - FEED
+        =============================== -->
+
+        <section
+            id="area-feed"
+            class="conteudo"
+        >
+
+            <div class="feed-vazio">
+
+                <p>
+                    Nenhuma publicação ainda.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="principal.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,455 @@
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #efecf8;
+
+    color: #292633;
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   PALETA DA INTERFACE
+======================================== */
+
+:root {
+
+    /* Fundo semelhante à referência */
+
+    --fundo: #efecf8;
+
+    --lavanda-clara: #ddd7ec;
+
+    --lavanda: #cbc4df;
+
+    --lavanda-escura: #aaa1c2;
+
+    --branco: #ffffff;
+
+    --texto: #292633;
+
+    --texto-secundario: #777181;
+}
+
+
+/* ========================================
+   TELA INICIAL
+======================================== */
+
+.tela-inicial {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #f8f6fc 0%,
+            var(--fundo) 55%,
+            #e7e2f2 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+.conteudo {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+    max-width: 390px;
+
+    min-height: 100vh;
+
+    padding:
+        80px
+        32px
+        55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+/* ========================================
+   MARCA
+======================================== */
+
+.marca {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    transform: translateY(-20px);
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo {
+    width: 155px;
+    height: 155px;
+
+    object-fit: contain;
+
+    margin-bottom: 12px;
+
+    animation:
+        aparecerLogo
+        0.8s
+        ease
+        forwards;
+}
+
+
+/* ========================================
+   NOME NEXO
+======================================== */
+
+.nome {
+    font-size: 62px;
+
+    font-weight: 500;
+
+    letter-spacing: -4px;
+
+    line-height: 1;
+
+    color: var(--texto);
+
+    margin-bottom: 17px;
+
+    opacity: 0;
+
+    animation:
+        aparecerTexto
+        0.7s
+        ease
+        0.25s
+        forwards;
+}
+
+
+/* ========================================
+   SLOGAN
+======================================== */
+
+.slogan {
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 1.55;
+
+    letter-spacing: 0.2px;
+
+    color: var(--texto-secundario);
+
+    opacity: 0;
+
+    animation:
+        aparecerTexto
+        0.7s
+        ease
+        0.4s
+        forwards;
+}
+
+
+/* ========================================
+   ÁREA DO BOTÃO
+======================================== */
+
+.acoes {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* ========================================
+   BOTÃO COMEÇAR
+======================================== */
+
+.botao-comecar {
+    width: 100%;
+    max-width: 280px;
+
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: var(--lavanda);
+
+    color: var(--texto);
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 24px
+        rgba(82, 73, 105, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+
+    opacity: 0;
+
+    animation:
+        aparecerBotao
+        0.7s
+        ease
+        0.6s
+        forwards;
+}
+
+
+.botao-comecar:hover {
+    background: var(--lavanda-clara);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 27px
+        rgba(82, 73, 105, 0.16);
+}
+
+
+.botao-comecar:active {
+    transform: scale(0.97);
+}
+
+
+/* ========================================
+   SETA
+======================================== */
+
+.seta {
+    font-size: 20px;
+
+    transition:
+        transform
+        0.2s
+        ease;
+}
+
+
+.botao-comecar:hover .seta {
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   DECORAÇÃO DO FUNDO
+======================================== */
+
+.circulo {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            203,
+            196,
+            223,
+            0.25
+        );
+
+    filter: blur(1px);
+}
+
+
+.circulo-1 {
+    width: 260px;
+    height: 260px;
+
+    top: -110px;
+    right: -100px;
+}
+
+
+.circulo-2 {
+    width: 190px;
+    height: 190px;
+
+    bottom: 80px;
+    left: -110px;
+
+    background:
+        rgba(
+            221,
+            215,
+            236,
+            0.45
+        );
+}
+
+
+.circulo-3 {
+    width: 70px;
+    height: 70px;
+
+    top: 42%;
+    right: -25px;
+
+    background:
+        rgba(
+            203,
+            196,
+            223,
+            0.18
+        );
+}
+
+
+/* ========================================
+   ANIMAÇÕES
+======================================== */
+
+@keyframes aparecerLogo {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px)
+            scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes aparecerTexto {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes aparecerBotao {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   CELULARES MENORES
+======================================== */
+
+@media (max-width: 360px) {
+
+    .conteudo {
+        padding:
+            60px
+            25px
+            40px;
+    }
+
+
+    .logo {
+        width: 135px;
+        height: 135px;
+    }
+
+
+    .nome {
+        font-size: 54px;
+    }
+
+
+    .slogan {
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexo - Início</title>
+    <link rel="stylesheet" href="css/perfis.css">
+</head>
+<body>
+    <main class="home-page">
+        <div class="home-card">
+            <div id="selectedAvatar" class="big-avatar">👩</div>
+            <h1>Olá, <span id="selectedName">Perfil</span>!</h1>
+            <p>Você entrou no seu perfil do Nexo.</p>
+
+            <button class="primary-button" onclick="window.location.href='perfis.html'">
+                Trocar perfil
+            </button>
+        </div>
+    </main>
+
+    <script>
+        const perfil = JSON.parse(sessionStorage.getItem("perfilSelecionado") || "null");
+
+        if (!perfil) {
+            window.location.href = "perfis.html";
+        } else {
+            document.getElementById("selectedName").textContent = perfil.nome;
+
+            const avatars = {
+                avatar1: "👩",
+                avatar2: "👨",
+                avatar3: "👩🏻",
+                avatar4: "👨🏻",
+                avatar5: "🧑"
+            };
+
+            document.getElementById("selectedAvatar").textContent =
+                avatars[perfil.avatar] || "🧑";
+        }
+    </script>
+</body>
+</html>

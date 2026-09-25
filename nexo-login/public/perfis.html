@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexo - Perfis</title>
+    <link rel="stylesheet" href="css/perfis.css">
+</head>
+<body>
+    <main class="profiles-page">
+        <header class="profiles-header">
+            <div class="brand">
+                <div class="brand-icon">✦</div>
+                <div class="brand-name">nexo</div>
+            </div>
+
+            <button id="logoutButton" class="logout">Sair</button>
+        </header>
+
+        <section class="profiles-content">
+            <h1>Quem está acessando?</h1>
+            <p>Escolha o seu perfil para continuar.</p>
+
+            <div id="profilesGrid" class="profiles-grid"></div>
+
+            <div id="emptyState" class="empty-state hidden">
+                <div class="empty-icon">＋</div>
+                <h2>Crie seu primeiro perfil</h2>
+                <p>Adicione um perfil para começar.</p>
+                <button class="primary-button" id="firstProfileButton">
+                    Criar perfil
+                </button>
+            </div>
+
+            <button id="addProfileButton" class="add-profile-button">
+                <span>＋</span>
+                <strong>Adicionar perfil</strong>
+            </button>
+        </section>
+    </main>
+
+    <div id="profileModal" class="modal hidden">
+        <div class="modal-card">
+            <button id="closeModal" class="close">×</button>
+
+            <h2>Criar perfil</h2>
+            <p>Escolha um nome e um avatar.</p>
+
+            <form id="profileForm">
+                <label for="profileName">Nome do perfil</label>
+                <input id="profileName" maxlength="30" placeholder="Ex.: Responsável">
+
+                <label>Escolha seu avatar</label>
+
+                <div class="avatars">
+                    <button type="button" class="avatar-option selected" data-avatar="avatar1">👩</button>
+                    <button type="button" class="avatar-option" data-avatar="avatar2">👨</button>
+                    <button type="button" class="avatar-option" data-avatar="avatar3">👩🏻</button>
+                    <button type="button" class="avatar-option" data-avatar="avatar4">👨🏻</button>
+                    <button type="button" class="avatar-option" data-avatar="avatar5">🧑</button>
+                </div>
+
+                <button class="primary-button" type="submit">Criar perfil</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/perfis.js"></script>
+</body>
+</html>

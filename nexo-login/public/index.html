@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexo - Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <main class="auth-page">
+        <div class="shape shape-purple"></div>
+        <div class="shape shape-orange"></div>
+        <div class="shape shape-pink"></div>
+
+        <section class="login-card">
+            <div class="brand">
+                <div class="brand-icon">✦</div>
+                <div class="brand-name">nexo</div>
+            </div>
+
+            <p class="tagline">Conectado com conquistas.<br>Fortalecendo laços.</p>
+
+            <form id="loginForm">
+                <div class="input-box">
+                    <span>♙</span>
+                    <input id="email" type="text" placeholder="E-mail ou usuário" autocomplete="username">
+                </div>
+
+                <div class="input-box">
+                    <span>♙</span>
+                    <input id="senha" type="password" placeholder="Senha" autocomplete="current-password">
+                    <button type="button" class="eye" id="togglePassword">◉</button>
+                </div>
+
+                <button class="primary-button" type="submit">Entrar</button>
+            </form>
+
+            <button class="forgot" type="button" onclick="alert('Função de recuperação será adicionada depois.')">
+                Esqueceu a senha?
+            </button>
+
+            <div class="signup">
+                <span>Ainda não tem uma conta?</span>
+                <a href="cadastro.html">Criar conta</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

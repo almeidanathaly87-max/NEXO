@@ -1,0 +1,13 @@
+{
+  "name": "nexo-login",
+  "version": "1.0.0",
+  "description": "Sistema de login e perfis inspirado no fluxo apresentado pelo usuário",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

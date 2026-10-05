@@ -1,0 +1,111 @@
+/*==Nexo - Tela Inicial==*/
+
+:root {
+    /* Identidade visual do Nexo */
+    --roxo-nexo: #6C3FF2;
+    --coral-nexo:#FA526D;
+    --dourado-nexo: #FFAD24;
+
+    /* Estrutura - modo claro */
+    --fundo: #F8F7FB;
+    --card: #FFFFFF;
+    --superfiicie: #F1EFF5;
+    --borda: #E3DFE8;
+
+    --texto-principal: #29252F;
+    --texto-secundario: #716B78;
+}
+
+/* == Configuração Geral == */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto-principal);
+}
+
+/*== Tela Inicial ==*/
+
+.tela-inicial {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: var(--fundo);
+
+    overflow: hidden;
+}
+
+/*== Círculos Decoativos ==*/
+
+.circulo {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.circulo-1 {
+    width: 250px;
+    height: 250px;
+
+    top: -100px;
+    right: -90px;
+
+    background: var(--roxo-nexo);
+}
+
+.circulo-2 {
+    width: 190px;
+    height: 190px;
+
+    bottom: 70px;
+    left: -90px;
+
+    background: var(--coral-nexo);
+}
+
+.circulo-3 {
+    width: 75px;
+    height: 75px;
+
+    top: 43%;
+    right: -25px;
+
+    background: var(--dourado-nexo);
+}
+
+/*== Conteúdo --*/
+
+.conteudo {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 390px;
+    min-height: 100vh;
+
+    padding: 60px 30px 45px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-between;
+}

@@ -4,13 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Nexo</title>
+    <title>Nexo | Início</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,16 +15,65 @@
 
     <main class="tela-inicial">
 
-        <!-- Quatro elementos decorativos do fundo -->
-        <div class="circulo circulo-1"></div>
-        <div class="circulo circulo-2"></div>
-        <div class="circulo circulo-3"></div>
-        <div class="circulo circulo-4"></div>
+        <!-- Quatro formas decorativas -->
 
-        <!-- Conteúdo da tela inicial -->
+        <svg class="forma forma-superior" viewBox="0 0 240 180"
+             preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+                <linearGradient id="gradiente-superior"
+                                x1="0%" y1="0%"
+                                x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFAD24"/>
+                    <stop offset="100%" stop-color="#FA526D"/>
+                </linearGradient>
+            </defs>
+
+            <path
+                d="M 75 0
+                   H 240
+                   V 180
+                   C 183 170, 153 143, 143 100
+                   C 133 55, 104 20, 75 0 Z"
+                fill="url(#gradiente-superior)"
+            />
+        </svg>
+
+        <svg class="forma forma-esquerda" viewBox="0 0 220 210"
+             preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M 0 0
+                   C 65 12, 118 50, 156 98
+                   C 190 140, 208 182, 220 210
+                   H 0 Z"
+                fill="#6C3FF2"
+            />
+        </svg>
+
+        <svg class="forma forma-dourada" viewBox="0 0 230 140"
+             preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M 0 140
+                   C 27 77, 65 29, 113 17
+                   C 164 4, 207 59, 230 140 Z"
+                fill="#FFAD24"
+            />
+        </svg>
+
+        <svg class="forma forma-coral" viewBox="0 0 180 140"
+             preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M 0 140
+                   C 22 86, 59 47, 106 24
+                   C 139 8, 163 4, 180 0
+                   V 140 Z"
+                fill="#FA526D"
+            />
+        </svg>
+
+        <!-- Conteúdo central -->
+
         <section class="conteudo">
 
-            <!-- Logo e identidade -->
             <div class="marca">
 
                 <img
@@ -46,7 +91,6 @@
 
             </div>
 
-            <!-- Botão de navegação -->
             <div class="acoes">
 
                 <button
@@ -55,10 +99,7 @@
                     type="button"
                 >
                     Começar
-
-                    <span class="seta" aria-hidden="true">
-                        →
-                    </span>
+                    <span class="seta" aria-hidden="true">→</span>
                 </button>
 
             </div>

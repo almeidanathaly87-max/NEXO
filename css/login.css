@@ -1,0 +1,266 @@
+/* ========================================
+   NEXO — TELA DE LOGIN
+======================================== */
+
+:root {
+    --roxo-nexo: #6C3FF2;
+    --coral-nexo: #FA526D;
+    --dourado-nexo: #FFAD24;
+
+    --fundo: #FAF9FD;
+    --branco: #FFFFFF;
+    --texto-principal: #302A3A;
+    --texto-secundario: #716B78;
+}
+
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto-principal);
+}
+
+/* Tela */
+
+.tela-login {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    overflow: hidden;
+    background: var(--fundo);
+}
+
+/* formas decorativas */
+
+.forma {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    pointer-events: none;
+}
+
+.forma-superior{
+    top: 0;
+    right: 0;
+    width: 240px;
+    height: 180px;
+}
+
+.forma-esquerda {
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    height: 210px;
+}
+
+.forma-dourada{
+    bottom: 0;
+    right: 85px;
+    width: 230px;
+    height: 140px;
+}
+
+.forma-coral{
+    bottom: 0;
+    right: 0;
+    width: 180px;
+    height: 140px;
+}
+
+/* Conteúdo */
+
+.conteudo-login{
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 390px;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    margin: 0 auto;
+    padding: 35px 30px 30px;
+}
+
+/*Marca*/
+
+.marca-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100px;
+    margin: 35px 0 38px;
+
+    text-align: center;
+}
+
+.logo-login{
+    display: block;
+    width: 145px;
+    height: 145px;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.slogan-login{
+    margin-top: 14px;
+
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--texto-secundario);
+}
+
+/* Formulario*/
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+
+    width: 100%;
+}
+
+.campo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    height: 52px;
+    padding: 0 14px;
+
+    background: var(--branco);
+    border: 1px solid #E3DFE8;
+    border-radius: 15px;
+}
+
+.campo:focus-within{
+    border-color: var(--roxo-nexo);
+}
+
+.icone-campo{
+    width: 23px;
+    flex-shrink: 0;
+    font-size: 19px;
+    color: var(--roxo-nexo);
+}
+
+.campo input{
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--texto-principal);
+}
+
+.campo input::placeholder{
+    color: var(--texto-secundario);
+}
+
+.mostrar-senha{
+    border: none;
+    background: transparent;
+
+    padding: 8px;
+    font-size: 18px;
+    color: var(--roxo-nexo);
+
+    cursor: pointer;
+}
+
+/* Botão entrar */
+
+.botao-entrar{
+    width: 100%;
+    height: 52px;
+    margin-top: 6px;
+
+    border: none;
+    border-radius: 26px;
+
+    background: var(--roxo-nexo);
+    color: var(--branco);
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.botao-entrar:hover{
+    opacity: 0.92;
+}
+
+/* Recuperação */
+
+.link-recuperar{
+    margin-top: 5px;
+
+    font-size: 12px;
+    color: var(--texto-secundario);
+    text-decoration: none;
+}
+
+.link-recuperar:hover{
+    text-decoration: underline;
+}
+
+.mensagem-login{
+    min-height: 18px;
+    font-size: 12px;
+    text-align: center;
+    color: var(--texto-principal);
+}
+
+/* Rodapé */
+
+.rodape-login{
+    margin-top: auto;
+    padding: 30px 0 14px;
+    text-align: center;
+}
+
+.rodape-login p{
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: var(--texto-secundario);
+}
+
+.rodape-login a{
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--roxo-nexo);
+    text-decoration: none;
+}
+
+.rodape-login a:hover{
+    text-decoration: underline;
+}

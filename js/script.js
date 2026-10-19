@@ -1,16 +1,22 @@
 
-/* =====================================
+/* ========================================
    NEXO — TELA INICIAL
-===================================== */
+======================================== */
 
-const botaoComecar = document.getElementById("botao-comecar");
+document.addEventListener("DOMContentLoaded", () => {
 
-// Navegação para a próxima tela
-botaoComecar.addEventListener("click", () => {
+    const botaoComecar = document.getElementById("botao-comecar");
 
-    // A tela de login será desenvolvida
-    // na próxima etapa do projeto.
+    if (!botaoComecar) {
+        console.error("Botão Começar não encontrado.");
+        return;
+    }
 
-    window.location.href = "login.html";
+    botaoComecar.addEventListener("click", () => {
+
+        // Abre a tela de login quando ela existir.
+        window.location.href = "login.html";
+
+    });
 
 });

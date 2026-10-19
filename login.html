@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexo | Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <main class="tela-login">
+
+        <!-- Quatro formas decorativas -->
+        
+       <svg class="forma forma-superior" viewBox="0 0 240 180"
+             preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+                <linearGradient id="gradiente-superior"
+                                x1="0%" y1="0%"
+                                x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFAD24"/>
+                    <stop offset="100%" stop-color="#FA526D"/>
+                </linearGradient>
+            </defs>
+
+            <path
+                d="M 75 0
+                   H 240
+                   V 180
+                   C 183 170, 153 143, 143 100
+                   C 133 55, 104 20, 75 0 Z"
+                fill="url(#gradiente-superior)"
+            />
+        </svg>
+
+        <svg class="forma forma-esquerda" viewBox="0 0 220 210"
+             preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M 0 0
+                   C 65 12, 118 50, 156 98
+                   C 190 140, 208 182, 220 210
+                   H 0 Z"
+                fill="#6C3FF2"
+            />
+        </svg>
+
+        <svg class="forma forma-dourada" viewBox="0 0 230 140"
+             preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M 0 140
+                   C 27 77, 65 29, 113 17
+                   C 164 4, 207 59, 230 140 Z"
+                fill="#FFAD24"
+            />
+        </svg>
+
+        <svg class="forma forma-coral" viewBox="0 0 180 140"
+             preserveAspectRatio="none" aria-hidden="true">
+            <path
+                d="M 0 140
+                   C 22 86, 59 47, 106 24
+                   C 139 8, 163 4, 180 0
+                   V 140 Z"
+                fill="#FA526D"
+            />
+        </svg>
+
+        <!-- Conteúdo do login -->
+
+        <section class="conteudo-login">
+
+            <header class="marca-login">
+
+                <img src="img/logo-nexo.png" alt="Logo da Nexo" class="logo-login">
+
+                <h1 class="nome-login">nexo</h1>
+
+                <p class="slogan-login">Conectando conquistas.<br>
+                Fortalecendo laços.</p>
+            </header>
+
+            <form id="form-login" class="form-login">
+
+                <div class="campo">
+
+                    <span class="icone-campo" aria-hidden="true">♙</span>
+
+                    <input type="text" id="usuario" name="usuario" placeholder="E-mail ou usuário" autocomplete="username" required>
+                </div>
+
+                <div class="campo">
+
+                    <span class="icone-campo" aria-hidden="true">♧</span>
+
+                    <input type="password" id="senha" name="senha" placeholder="Senha" autocomplete="current-password" required>
+
+                    <button type="button" id="mostrar-senha" class="mostrar-senha" aria-label="Mostrar senha">👁</button>
+                </div>
+
+                <button type="submit" class="botao-entrar">Entrar</button>
+
+                    <a href="#" id="esqueci-senha" class="link-recuperar">Esqueceu a senha?</a>
+                    
+                    <p id="mensagem-login" class="mensagem-login" role="status" aria-live="polite"></p>
+            </form>
+
+            <footer class="rodape-login">
+                <p>Ainda não tem uma conta?</p>
+                <a href="#" id="criar-conta">Criar conta</a>
+            </footer>
+        </section>
+    </main>
+
+    <script src="js/login.js"></script>
+
+</body>
+</html>

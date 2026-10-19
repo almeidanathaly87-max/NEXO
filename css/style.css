@@ -1,7 +1,7 @@
 
-/* =====================================
+/* ========================================
    NEXO — TELA INICIAL
-===================================== */
+======================================== */
 
 /* CORES */
 
@@ -36,104 +36,66 @@ body {
     color: var(--texto-principal);
 }
 
-/* TELA INICIAL */
+/* ESTRUTURA DA TELA */
 
 .tela-inicial {
     position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    isolation: isolate;
 
     width: 100%;
     height: 100vh;
     height: 100dvh;
 
-    background: var(--fundo);
     overflow: hidden;
-    isolation: isolate;
+    background: var(--fundo);
 }
 
+/* FORMAS DECORATIVAS */
 
-/* =====================================
-   FORMAS DECORATIVAS — TELA INICIAL
-===================================== */
-
-.circulo {
+.forma {
     position: absolute;
-    pointer-events: none;
     z-index: -1;
-    opacity: 1;
+    display: block;
+    pointer-events: none;
 }
 
-/* SUPERIOR DIREITO — CORAL E DOURADO */
+/* Superior direito */
 
-.circulo-1 {
-    width: 220px;
+.forma-superior {
+    top: 0;
+    right: 0;
+    width: 240px;
     height: 180px;
-
-    top: -80px;
-    right: -65px;
-
-    background: linear-gradient(
-        135deg,
-        var(--dourado-nexo),
-        var(--coral-nexo)
-    );
-
-    border-radius: 35% 0 65% 75%;
-    transform: rotate(-18deg);
 }
 
-/* INFERIOR ESQUERDO — ROXO */
+/* Inferior esquerdo */
 
-.circulo-2 {
+.forma-esquerda {
+    bottom: 0;
+    left: 0;
     width: 220px;
-    height: 200px;
-
-    bottom: -85px;
-    left: -115px;
-
-    background: var(--roxo-nexo);
-
-    border-radius: 30% 80% 40% 0;
-    transform: rotate(-25deg);
+    height: 210px;
 }
 
-/* INFERIOR DIREITO — DOURADO */
+/* Inferior direito — dourado */
 
-.circulo-3 {
-    width: 210px;
-    height: 170px;
-
-    bottom: -100px;
-    right: 75px;
-
-    background: var(--dourado-nexo);
-
-    border-radius: 80% 30% 0 50%;
-    transform: rotate(20deg);
+.forma-dourada {
+    bottom: 0;
+    right: 85px;
+    width: 230px;
+    height: 140px;
 }
 
-/* INFERIOR DIREITO — CORAL */
+/* Inferior direito — coral */
 
-.circulo-4 {
-    width: 175px;
-    height: 165px;
-
-    bottom: -100px;
-    right: -85px;
-
-    background: var(--coral-nexo);
-
-    border-radius: 70% 35% 0 60%;
-    transform: rotate(-20deg);
+.forma-coral {
+    bottom: 0;
+    right: 0;
+    width: 180px;
+    height: 140px;
 }
 
-
-/* =====================================
-   CONTEÚDO PRINCIPAL
-===================================== */
+/* CONTEÚDO PRINCIPAL */
 
 .conteudo {
     position: relative;
@@ -146,13 +108,13 @@ body {
 
     width: 100%;
     max-width: 390px;
-
     height: 100%;
 
+    margin: 0 auto;
     padding: 60px 30px 45px;
 }
 
-/* LOGO E MARCA */
+/* LOGO E IDENTIDADE */
 
 .marca {
     flex: 1;
@@ -168,12 +130,9 @@ body {
 
 .logo {
     display: block;
-
     width: 150px;
     height: 150px;
-
     object-fit: contain;
-
     margin-bottom: 14px;
 }
 
@@ -192,18 +151,14 @@ body {
     font-size: 15px;
     line-height: 1.55;
     text-align: center;
-
     color: var(--texto-secundario);
 }
 
-/* =====================================
-   BOTÃO COMEÇAR
-===================================== */
+/* BOTÃO COMEÇAR */
 
 .acoes {
     display: flex;
     justify-content: center;
-
     width: 100%;
 }
 
@@ -211,7 +166,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 14px;
 
     width: 280px;
@@ -253,12 +207,9 @@ body {
     outline-offset: 4px;
 }
 
-/* SETA */
-
 .seta {
     font-size: 20px;
     line-height: 1;
-
     transition: transform 0.2s ease;
 }
 

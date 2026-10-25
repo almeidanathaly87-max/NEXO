@@ -9,53 +9,101 @@
 
     --fundo: #FAF9FD;
     --branco: #FFFFFF;
+
     --texto-principal: #302A3A;
     --texto-secundario: #716B78;
+
+    --borda-campo: #E3DFE8;
+
+    --escala: 1;
+
+    color-scheme: light;
 }
+
+/* ========================================
+   TEMA ESCURO
+======================================== */
+
+html.tema-escuro,
+body.tema-escuro {
+    --fundo: #181420;
+    --branco: #292233;
+
+    --texto-principal: #F5F1FA;
+    --texto-secundario: #D5CCDF;
+
+    --borda-campo: #51455F;
+
+    color-scheme: dark;
+}
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
 
 * {
     margin: 0;
-    padding: 0%;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
+html {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
+
+    font-size: calc(16px * var(--escala));
 }
 
 body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
     font-family: Arial, Helvetica, sans-serif;
+
     background: var(--fundo);
     color: var(--texto-principal);
 }
 
-/* Tela */
+/* ========================================
+   TELA
+======================================== */
 
 .tela-login {
     position: relative;
     isolation: isolate;
 
     width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
+    max-width: none;
+
+    height: 100vh;
+    height: 100dvh;
+
+    margin: 0;
 
     overflow: hidden;
+
     background: var(--fundo);
 }
 
-/* formas decorativas */
+/* ========================================
+   FORMAS DECORATIVAS
+======================================== */
 
 .forma {
     position: absolute;
     z-index: -1;
+
     display: block;
+
     pointer-events: none;
 }
 
-.forma-superior{
+.forma-superior {
     top: 0;
     right: 0;
+
     width: 240px;
     height: 180px;
 }
@@ -63,27 +111,32 @@ body {
 .forma-esquerda {
     bottom: 0;
     left: 0;
+
     width: 220px;
     height: 210px;
 }
 
-.forma-dourada{
+.forma-dourada {
     bottom: 0;
     right: 85px;
+
     width: 230px;
     height: 140px;
 }
 
-.forma-coral{
+.forma-coral {
     bottom: 0;
     right: 0;
+
     width: 180px;
     height: 140px;
 }
 
-/* Conteúdo */
+/* ========================================
+   CONTEÚDO
+======================================== */
 
-.conteudo-login{
+.conteudo-login {
     position: relative;
     z-index: 1;
 
@@ -93,120 +146,160 @@ body {
 
     width: 100%;
     max-width: 390px;
-    min-height: 100vh;
-    min-height: 100dvh;
+
+    height: 100%;
 
     margin: 0 auto;
     padding: 35px 30px 30px;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    scrollbar-width: none;
 }
 
-/*Marca*/
+.conteudo-login::-webkit-scrollbar {
+    display: none;
+}
 
-.marca-login{
+/* ========================================
+   MARCA
+======================================== */
+
+.marca-login {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    width: 100px;
+    width: 100%;
+
     margin: 35px 0 38px;
 
     text-align: center;
 }
 
-.logo-login{
+.logo-login {
     display: block;
+
     width: 145px;
     height: 145px;
     max-width: 100%;
+
     object-fit: contain;
+
     margin: 0 auto;
 }
 
-.slogan-login{
+.slogan-login {
     margin-top: 14px;
 
     font-size: 13px;
     line-height: 1.5;
+
     color: var(--texto-secundario);
 }
 
-/* Formulario*/
+/* ========================================
+   FORMULÁRIO
+======================================== */
 
 .form-login {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: 13px;
 
     width: 100%;
 }
 
-.campo{
+/* ========================================
+   CAMPOS
+======================================== */
+
+.campo {
     display: flex;
     align-items: center;
+
     gap: 8px;
 
     width: 100%;
     height: 52px;
+
     padding: 0 14px;
 
     background: var(--branco);
-    border: 1px solid #E3DFE8;
+
+    border: 1px solid var(--borda-campo);
     border-radius: 15px;
 }
 
-.campo:focus-within{
+.campo:focus-within {
     border-color: var(--roxo-nexo);
 }
 
-.icone-campo{
+.icone-campo {
     width: 23px;
     flex-shrink: 0;
+
     font-size: 19px;
+
     color: var(--roxo-nexo);
 }
 
-.campo input{
+.campo input {
     flex: 1;
     min-width: 0;
+
     height: 100%;
 
     border: none;
     outline: none;
+
     background: transparent;
 
     font-family: inherit;
     font-size: 14px;
+
     color: var(--texto-principal);
 }
 
-.campo input::placeholder{
+.campo input::placeholder {
     color: var(--texto-secundario);
 }
 
-.mostrar-senha{
+/* ========================================
+   MOSTRAR SENHA
+======================================== */
+
+.mostrar-senha {
     border: none;
     background: transparent;
 
     padding: 8px;
+
     font-size: 18px;
+
     color: var(--roxo-nexo);
 
     cursor: pointer;
 }
 
-/* Botão entrar */
+/* ========================================
+   BOTÃO ENTRAR
+======================================== */
 
-.botao-entrar{
+.botao-entrar {
     width: 100%;
     height: 52px;
+
     margin-top: 6px;
 
     border: none;
     border-radius: 26px;
 
     background: var(--roxo-nexo);
-    color: var(--branco);
+    color: #FFFFFF;
 
     font-family: inherit;
     font-size: 15px;
@@ -215,52 +308,146 @@ body {
     cursor: pointer;
 }
 
-.botao-entrar:hover{
+.botao-entrar:hover {
     opacity: 0.92;
 }
 
-/* Recuperação */
+/* ========================================
+   RECUPERAÇÃO DE SENHA
+======================================== */
 
-.link-recuperar{
+.link-recuperar {
     margin-top: 5px;
 
     font-size: 12px;
+
     color: var(--texto-secundario);
+
     text-decoration: none;
 }
 
-.link-recuperar:hover{
+.link-recuperar:hover {
     text-decoration: underline;
 }
 
-.mensagem-login{
+/* ========================================
+   MENSAGEM
+======================================== */
+
+.mensagem-login {
     min-height: 18px;
+
     font-size: 12px;
     text-align: center;
+
     color: var(--texto-principal);
 }
 
-/* Rodapé */
+/* ========================================
+   RODAPÉ
+======================================== */
 
-.rodape-login{
+.rodape-login {
     margin-top: auto;
+
     padding: 30px 0 14px;
+
     text-align: center;
 }
 
-.rodape-login p{
+.rodape-login p {
     margin-bottom: 5px;
+
     font-size: 12px;
+
     color: var(--texto-secundario);
 }
 
-.rodape-login a{
+.rodape-login a {
     font-size: 13px;
     font-weight: 700;
+
     color: var(--roxo-nexo);
+
     text-decoration: none;
 }
 
-.rodape-login a:hover{
+.rodape-login a:hover {
     text-decoration: underline;
+}
+
+/* ========================================
+   MODO ESCURO — AJUSTES
+======================================== */
+
+html.tema-escuro body,
+html.tema-escuro .tela-login {
+    background: #181420;
+    color: #F5F1FA;
+}
+
+html.tema-escuro .campo {
+    background: #292233;
+    border-color: #51455F;
+}
+
+html.tema-escuro .campo:focus-within {
+    border-color: #A98AFF;
+}
+
+html.tema-escuro .campo input {
+    color: #F5F1FA;
+}
+
+html.tema-escuro .campo input::placeholder {
+    color: #D5CCDF;
+}
+
+html.tema-escuro .slogan-login,
+html.tema-escuro .link-recuperar,
+html.tema-escuro .rodape-login p {
+    color: #D5CCDF;
+}
+
+html.tema-escuro .mensagem-login {
+    color: #F5F1FA;
+}
+
+html.tema-escuro .botao-entrar {
+    background: #6C3FF2;
+    color: #FFFFFF;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 430px) {
+
+    .conteudo-login {
+        width: 100%;
+
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .forma-superior {
+        width: 180px;
+        height: 135px;
+    }
+
+    .forma-esquerda {
+        width: 170px;
+        height: 165px;
+    }
+
+    .forma-dourada {
+        width: 175px;
+        height: 110px;
+    }
+
+    .forma-coral {
+        width: 135px;
+        height: 110px;
+    }
 }

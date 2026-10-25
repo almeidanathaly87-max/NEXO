@@ -1,15 +1,45 @@
-
-/* NEXO — TELA DE CADASTRO */
+/* ========================================
+   NEXO — TELA DE CADASTRO
+======================================== */
 
 :root {
     --roxo-nexo: #6C3FF2;
     --coral-nexo: #FA526D;
     --dourado-nexo: #FFAD24;
+
     --fundo: #FAF9FD;
     --branco: #FFFFFF;
+
     --texto: #302A3A;
     --texto-secundario: #716B78;
+
+    --borda-campo: #E3DFE8;
+
+    --escala: 1;
+
+    color-scheme: light;
 }
+
+/* ========================================
+   TEMA ESCURO
+======================================== */
+
+html.tema-escuro,
+body.tema-escuro {
+    --fundo: #181420;
+    --branco: #292233;
+
+    --texto: #F5F1FA;
+    --texto-secundario: #D5CCDF;
+
+    --borda-campo: #51455F;
+
+    color-scheme: dark;
+}
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
 
 * {
     margin: 0;
@@ -17,21 +47,46 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    height: 100%;
+
+    font-size: calc(16px * var(--escala));
+}
+
 body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
     font-family: Arial, Helvetica, sans-serif;
+
     background: var(--fundo);
     color: var(--texto);
 }
 
+/* ========================================
+   TELA DE CADASTRO
+======================================== */
+
 .tela-cadastro {
     position: relative;
     isolation: isolate;
-    min-height: 100vh;
-    min-height: 100dvh;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
     overflow: hidden;
+
+    background: var(--fundo);
+    color: var(--texto);
 }
 
-/* FORMAS DECORATIVAS */
+/* ========================================
+   FORMAS DECORATIVAS
+======================================== */
 
 .forma {
     position: absolute;
@@ -42,9 +97,12 @@ body {
 .forma-superior {
     top: -100px;
     right: -90px;
+
     width: 230px;
     height: 230px;
+
     border-radius: 50%;
+
     background: linear-gradient(
         135deg,
         var(--dourado-nexo),
@@ -55,112 +113,160 @@ body {
 .forma-esquerda {
     bottom: -110px;
     left: -110px;
+
     width: 230px;
     height: 230px;
+
     border-radius: 50%;
+
     background: var(--roxo-nexo);
 }
 
 .forma-dourada {
     bottom: -100px;
     right: 65px;
+
     width: 200px;
     height: 200px;
+
     border-radius: 50%;
+
     background: var(--dourado-nexo);
 }
 
 .forma-coral {
     bottom: -100px;
     right: -95px;
+
     width: 200px;
     height: 200px;
+
     border-radius: 50%;
+
     background: var(--coral-nexo);
 }
 
-/* CONTEÚDO */
+/* ========================================
+   CONTEÚDO
+======================================== */
 
 .conteudo-cadastro {
-    width: 100%;
-    max-width: 420px;
-    min-height: 100vh;
-    min-height: 100dvh;
-    margin: 0 auto;
-    padding: 28px 28px 35px;
     position: relative;
     z-index: 1;
+
+    width: 100%;
+    max-width: 420px;
+
+    height: 100%;
+
+    margin: 0 auto;
+    padding: 28px 28px 35px;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    scrollbar-width: none;
 }
+
+.conteudo-cadastro::-webkit-scrollbar {
+    display: none;
+}
+
+/* ========================================
+   VOLTAR
+======================================== */
 
 .voltar {
     display: inline-block;
+
     margin-bottom: 20px;
+
     color: var(--roxo-nexo);
+
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
 }
 
-/* CABEÇALHO */
+/* ========================================
+   CABEÇALHO
+======================================== */
 
 .cabecalho {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     text-align: center;
+
     margin-bottom: 28px;
 }
 
 .logo {
     width: 95px;
     height: 95px;
+
     object-fit: contain;
+
     margin-bottom: 12px;
 }
 
 .cabecalho h1 {
     font-size: 29px;
     margin-bottom: 9px;
+
+    color: var(--texto);
 }
 
 .cabecalho p {
     font-size: 14px;
     line-height: 1.5;
+
     color: var(--texto-secundario);
 }
 
-/* FORMULÁRIO */
+/* ========================================
+   FORMULÁRIO
+======================================== */
 
 .form-cadastro {
     display: flex;
     flex-direction: column;
+
     gap: 15px;
 }
 
 .campo {
     display: flex;
     flex-direction: column;
+
     gap: 7px;
 }
 
 .campo label {
     font-size: 13px;
     font-weight: 600;
+
+    color: var(--texto);
 }
 
 .campo > input,
 .campo-senha {
     width: 100%;
     height: 50px;
-    border: 1px solid #E3DFE8;
+
+    border: 1px solid var(--borda-campo);
     border-radius: 15px;
+
     background: var(--branco);
 }
 
 .campo > input {
     padding: 0 15px;
+
     font-family: inherit;
     font-size: 14px;
+
     color: var(--texto);
 }
 
@@ -173,30 +279,49 @@ body {
     border-color: var(--roxo-nexo);
 }
 
+.campo input::placeholder {
+    color: var(--texto-secundario);
+}
+
+/* ========================================
+   CAMPOS DE SENHA
+======================================== */
+
 .campo-senha {
     display: flex;
     align-items: center;
+
     padding: 0 8px 0 15px;
 }
 
 .campo-senha input {
     flex: 1;
     min-width: 0;
+
     height: 100%;
+
     border: none;
+    outline: none;
+
     background: transparent;
+
     font-family: inherit;
     font-size: 14px;
+
     color: var(--texto);
 }
 
 .mostrar-senha {
     border: none;
     background: transparent;
+
     color: var(--roxo-nexo);
+
     font-size: 12px;
     font-weight: 600;
+
     padding: 8px;
+
     cursor: pointer;
 }
 
@@ -205,10 +330,16 @@ body {
     color: var(--texto-secundario);
 }
 
+/* ========================================
+   MENSAGENS
+======================================== */
+
 .mensagem-cadastro {
     min-height: 18px;
+
     font-size: 13px;
     text-align: center;
+
     color: var(--coral-nexo);
 }
 
@@ -216,19 +347,26 @@ body {
     color: var(--roxo-nexo);
 }
 
-/* BOTÃO */
+/* ========================================
+   BOTÃO CADASTRAR
+======================================== */
 
 .botao-cadastrar {
     width: 100%;
     height: 52px;
+
     border: none;
     border-radius: 26px;
+
     background: var(--roxo-nexo);
-    color: var(--branco);
+    color: #FFFFFF;
+
     font-family: inherit;
     font-size: 15px;
     font-weight: 600;
+
     cursor: pointer;
+
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
 }
 
@@ -236,17 +374,70 @@ body {
     opacity: 0.92;
 }
 
-/* RODAPÉ */
+/* ========================================
+   RODAPÉ
+======================================== */
 
 .rodape {
     margin-top: 28px;
+
     text-align: center;
     font-size: 13px;
+
     color: var(--texto-secundario);
 }
 
 .rodape a {
     color: var(--roxo-nexo);
+
     font-weight: 700;
     text-decoration: none;
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   MODO ESCURO — AJUSTES
+======================================== */
+
+html.tema-escuro body,
+html.tema-escuro .tela-cadastro {
+    background: #181420;
+    color: #F5F1FA;
+}
+
+html.tema-escuro .campo > input,
+html.tema-escuro .campo-senha {
+    background: #292233;
+    border-color: #51455F;
+}
+
+html.tema-escuro .campo > input:focus,
+html.tema-escuro .campo-senha:focus-within {
+    border-color: #A98AFF;
+}
+
+html.tema-escuro .campo input,
+html.tema-escuro .campo label,
+html.tema-escuro .cabecalho h1 {
+    color: #F5F1FA;
+}
+
+html.tema-escuro .botao-cadastrar {
+    color: #FFFFFF;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 430px) {
+
+    .conteudo-cadastro {
+        width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }

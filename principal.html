@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexo | Início</title>
+  <link rel="stylesheet" href="css/principal.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topo">
+      <div class="marca"><img src="img/logo-nexo.png" alt="Logo do Nexo"><strong>nexo</strong></div>
+      <span class="topo-subtitulo">Conectando conquistas.</span>
+    </header>
+    <main id="conteudo" tabindex="-1">
+      <section id="inicio" class="pagina ativa" aria-labelledby="titulo-inicio">
+        <div class="boas-vindas"><p>Que bom ter você aqui!</p><h1 id="titulo-inicio">Olá! <span aria-hidden="true">✦</span></h1><p>Uma conquista de cada vez.</p></div>
+        <article class="cartao meta"><div class="titulo-linha"><div><span class="etiqueta">MINHA META</span><h2 id="meta-nome">Minha recompensa</h2></div><span class="meta-icone" aria-hidden="true">🎯</span></div><div class="pontos"><strong id="pontos-atuais">0</strong> <span>de <span id="pontos-meta">100</span> pontos</span></div><div class="barra" role="progressbar" aria-label="Progresso da meta" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barra-meta"><span id="preenchimento"></span></div><p id="progresso-texto" class="apoio">0% da meta alcançada</p><p class="previsao">Previsão: <span id="previsao">a definir pelo responsável</span></p></article>
+        <div class="secao-titulo"><h2>Tarefas de hoje</h2><button type="button" class="link-botao" data-ir="tarefas">Ver todas</button></div><div id="tarefas-inicio" class="lista"></div>
+      </section>
+      <section id="tarefas" class="pagina" aria-labelledby="titulo-tarefas" hidden><div class="cabecalho-pagina"><span class="etiqueta">MINHAS ATIVIDADES</span><h1 id="titulo-tarefas">Tarefas</h1><p>Conclua suas atividades e acumule pontos.</p></div><div id="tarefas-lista" class="lista"></div></section>
+      <section id="lacos" class="pagina" aria-labelledby="titulo-lacos" hidden><div class="cabecalho-pagina"><span class="etiqueta coral">CONQUISTAS REGISTRADAS</span><h1 id="titulo-lacos">Laços <span aria-hidden="true">♥</span></h1><p>Registros das tarefas que você concluiu.</p></div><div id="registros-lista" class="lista"></div></section>
+      <section id="perfil" class="pagina" aria-labelledby="titulo-perfil" hidden><div class="cabecalho-pagina"><span class="etiqueta">MINHA CONTA</span><h1 id="titulo-perfil">Perfil</h1></div><article class="cartao perfil-cartao"><div class="perfil-avatar" aria-hidden="true">✦</div><h2 id="perfil-nome">Perfil de demonstração</h2><p id="perfil-usuario">Nexo</p><div class="perfil-pontos"><span>Meus pontos</span><strong id="perfil-pontuacao">0</strong></div></article><button type="button" class="opcao" data-ir="configuracoes"><span aria-hidden="true">Aa</span><span>Configurações <small>Tamanho da fonte e aparência</small></span><span aria-hidden="true">›</span></button><button type="button" id="sair" class="opcao sair"><span aria-hidden="true">↪</span><span>Sair da conta</span><span aria-hidden="true">›</span></button></section>
+      <section id="configuracoes" class="pagina" aria-labelledby="titulo-configuracoes" hidden><button type="button" class="voltar" data-ir="perfil">← Voltar ao perfil</button><div class="cabecalho-pagina"><span class="etiqueta">ACESSIBILIDADE</span><h1 id="titulo-configuracoes">Configurações</h1></div><article class="cartao ajuste"><h2>Tamanho da fonte</h2><p>Escolha o tamanho mais confortável.</p><div class="controles"><button type="button" id="fonte-menor" aria-label="Diminuir fonte">A−</button><output id="fonte-valor">100%</output><button type="button" id="fonte-maior" aria-label="Aumentar fonte">A+</button></div></article><article class="cartao ajuste"><h2>Aparência</h2><p>Escolha o tema do aplicativo.</p><div class="controles tema-controles"><button type="button" id="tema-claro">☀ Claro</button><button type="button" id="tema-escuro">☾ Escuro</button></div></article></section>
+    </main>
+    <nav class="navegacao" aria-label="Navegação principal"><button type="button" class="nav-item ativo" data-ir="inicio" aria-current="page"><span aria-hidden="true">⌂</span>Início</button><button type="button" class="nav-item" data-ir="tarefas"><span aria-hidden="true">☑</span>Tarefas</button><button type="button" class="nav-item" data-ir="lacos"><span aria-hidden="true">♥</span>Laços</button><button type="button" class="nav-item" data-ir="perfil"><span aria-hidden="true">◯</span>Perfil</button></nav>
+  </div>
+  <dialog id="dialogo-foto" aria-labelledby="titulo-foto"><div class="dialogo-conteudo"><h2 id="titulo-foto">Comprovar tarefa</h2><p id="tarefa-foto-nome"></p><video id="camera-video" autoplay playsinline muted hidden></video><canvas id="camera-canvas" hidden></canvas><img id="foto-capturada" alt="Foto capturada para comprovar a tarefa" hidden><p id="camera-erro" class="erro" role="alert"></p><div class="dialogo-acoes"><button type="button" id="fechar-camera" class="botao-secundario">Cancelar</button><button type="button" id="capturar-foto" class="botao-primario">Tirar foto</button><button type="button" id="repetir-foto" class="botao-secundario" hidden>Refazer</button><button type="button" id="confirmar-tarefa" class="botao-primario" hidden>Concluir tarefa</button></div></div></dialog>
+  <script src="js/principal.js"></script>
+</body>
+</html>

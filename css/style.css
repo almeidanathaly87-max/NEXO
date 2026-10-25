@@ -1,22 +1,39 @@
-
 /* ========================================
    NEXO — TELA INICIAL
 ======================================== */
 
-/* CORES */
+/* CORES E VARIÁVEIS */
 
 :root {
-    --roxo-nexo: #6C3FF2;
-    --coral-nexo: #FA526D;
-    --dourado-nexo: #FFAD24;
+    --roxo: #6C3FF2;
+    --coral: #FA526D;
+    --dourado: #FFAD24;
 
     --fundo: #FAF9FD;
-    --branco: #FFFFFF;
-    --texto-principal: #302A3A;
+    --texto: #302A3A;
     --texto-secundario: #716B78;
+
+    --escala: 1;
+
+    color-scheme: light;
 }
 
-/* CONFIGURAÇÕES GERAIS */
+/* ========================================
+   TEMA ESCURO
+======================================== */
+
+html.tema-escuro,
+body.tema-escuro {
+    --fundo: #181420;
+    --texto: #F5F1FA;
+    --texto-secundario: #D5CCDF;
+
+    color-scheme: dark;
+}
+
+/* ========================================
+   RESET
+======================================== */
 
 * {
     margin: 0;
@@ -24,19 +41,30 @@
     box-sizing: border-box;
 }
 
-html,
+html {
+    width: 100%;
+    height: 100%;
+    font-size: calc(16px * var(--escala));
+}
+
 body {
     width: 100%;
     height: 100%;
-}
+    overflow: hidden;
 
-body {
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--fundo);
-    color: var(--texto-principal);
+
+    background-color: var(--fundo);
+    color: var(--texto);
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
 }
 
-/* ESTRUTURA DA TELA */
+/* ========================================
+   TELA INICIAL
+======================================== */
 
 .tela-inicial {
     position: relative;
@@ -47,55 +75,71 @@ body {
     height: 100dvh;
 
     overflow: hidden;
-    background: var(--fundo);
+
+    background-color: var(--fundo);
+    color: var(--texto);
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
 }
 
-/* FORMAS DECORATIVAS */
+/* ========================================
+   FORMAS DECORATIVAS
+======================================== */
 
 .forma {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
+
     display: block;
+
     pointer-events: none;
 }
 
-/* Superior direito */
+/* FORMA SUPERIOR DIREITA */
 
 .forma-superior {
     top: 0;
     right: 0;
+
     width: 240px;
     height: 180px;
 }
 
-/* Inferior esquerdo */
+/* FORMA INFERIOR ESQUERDA */
 
 .forma-esquerda {
     bottom: 0;
     left: 0;
+
     width: 220px;
     height: 210px;
 }
 
-/* Inferior direito — dourado */
+/* FORMA DOURADA */
 
 .forma-dourada {
     bottom: 0;
     right: 85px;
+
     width: 230px;
     height: 140px;
 }
 
-/* Inferior direito — coral */
+/* FORMA CORAL */
 
 .forma-coral {
     bottom: 0;
     right: 0;
+
     width: 180px;
     height: 140px;
 }
 
-/* CONTEÚDO PRINCIPAL */
+/* ========================================
+   CONTEÚDO CENTRAL
+======================================== */
 
 .conteudo {
     position: relative;
@@ -108,80 +152,104 @@ body {
 
     width: 100%;
     max-width: 390px;
+
     height: 100%;
 
     margin: 0 auto;
+
     padding: 60px 30px 45px;
 }
 
-/* LOGO E IDENTIDADE */
+/* ========================================
+   MARCA
+======================================== */
 
 .marca {
-    flex: 1;
-
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     width: 100%;
+
     text-align: center;
 }
 
+/* LOGO ORIGINAL */
+
 .logo {
     display: block;
+
     width: 150px;
     height: 150px;
+
     object-fit: contain;
+
     margin-bottom: 14px;
 }
+
+/* NOME NEXO */
 
 .nome {
     margin-bottom: 14px;
 
-    font-size: 58px;
+    font-size: 3.625rem;
     font-weight: 500;
     line-height: 1;
+
     letter-spacing: -4px;
 
-    color: var(--texto-principal);
+    color: var(--texto);
 }
 
+/* SLOGAN */
+
 .slogan {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1.55;
+
     text-align: center;
+
     color: var(--texto-secundario);
 }
 
-/* BOTÃO COMEÇAR */
+/* ========================================
+   ÁREA DO BOTÃO
+======================================== */
 
 .acoes {
     display: flex;
     justify-content: center;
+
     width: 100%;
 }
+
+/* ========================================
+   BOTÃO COMEÇAR
+======================================== */
 
 .botao-comecar {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 14px;
 
     width: 280px;
     max-width: 100%;
-    height: 54px;
+    min-height: 54px;
 
-    padding: 0 24px;
+    padding: 12px 24px;
 
     border: none;
     border-radius: 28px;
 
-    background: var(--roxo-nexo);
-    color: var(--branco);
+    background-color: var(--roxo);
+    color: #FFFFFF;
 
     font-family: inherit;
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 600;
 
     cursor: pointer;
@@ -203,16 +271,166 @@ body {
 }
 
 .botao-comecar:focus-visible {
-    outline: 3px solid var(--dourado-nexo);
+    outline: 3px solid var(--dourado);
     outline-offset: 4px;
 }
 
+/* SETA */
+
 .seta {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1;
+
     transition: transform 0.2s ease;
 }
 
 .botao-comecar:hover .seta {
     transform: translateX(4px);
+}
+
+/* ========================================
+   MODO ESCURO — TELA INICIAL
+======================================== */
+
+html.tema-escuro body,
+body.tema-escuro {
+    background-color: #181420;
+    color: #F5F1FA;
+}
+
+html.tema-escuro .tela-inicial,
+body.tema-escuro .tela-inicial {
+    background-color: #181420;
+    color: #F5F1FA;
+}
+
+html.tema-escuro .nome,
+body.tema-escuro .nome {
+    color: #F5F1FA;
+}
+
+html.tema-escuro .slogan,
+body.tema-escuro .slogan {
+    color: #D5CCDF;
+}
+
+html.tema-escuro .botao-comecar,
+body.tema-escuro .botao-comecar {
+    background-color: #6C3FF2;
+    color: #FFFFFF;
+}
+
+/* ========================================
+   RESPONSIVIDADE — CELULARES
+======================================== */
+
+@media (max-width: 430px) {
+
+    .conteudo {
+        max-width: 100%;
+        padding: 35px 24px 30px;
+    }
+
+    .logo {
+        width: 130px;
+        height: 130px;
+    }
+
+    .nome {
+        font-size: 3.25rem;
+    }
+
+    .slogan {
+        font-size: 0.875rem;
+    }
+
+    .forma-superior {
+        width: 180px;
+        height: 135px;
+    }
+
+    .forma-esquerda {
+        width: 170px;
+        height: 165px;
+    }
+
+    .forma-dourada {
+        width: 175px;
+        height: 110px;
+        right: 55px;
+    }
+
+    .forma-coral {
+        width: 135px;
+        height: 110px;
+    }
+}
+
+/* ========================================
+   CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 360px) {
+
+    .conteudo {
+        padding: 24px 18px;
+    }
+
+    .logo {
+        width: 110px;
+        height: 110px;
+    }
+
+    .nome {
+        font-size: 2.875rem;
+    }
+
+    .botao-comecar {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   TELAS COM POUCA ALTURA
+======================================== */
+
+@media (max-height: 600px) {
+
+    .conteudo {
+        padding-top: 15px;
+        padding-bottom: 18px;
+    }
+
+    .logo {
+        width: 95px;
+        height: 95px;
+        margin-bottom: 8px;
+    }
+
+    .nome {
+        margin-bottom: 8px;
+        font-size: 2.5rem;
+    }
+
+    .slogan {
+        font-size: 0.8125rem;
+    }
+
+    .botao-comecar {
+        min-height: 46px;
+    }
+}
+
+/* ========================================
+   ACESSIBILIDADE — MOVIMENTO REDUZIDO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    body,
+    .tela-inicial,
+    .botao-comecar,
+    .seta {
+        transition: none;
+    }
 }
